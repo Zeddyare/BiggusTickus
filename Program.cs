@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using BiggusTickus.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<BiggusTickusContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BiggusTickusContext") ?? throw new InvalidOperationException("Connection string 'BiggusTickusContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

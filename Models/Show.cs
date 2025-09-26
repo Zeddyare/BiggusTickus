@@ -1,13 +1,13 @@
 ﻿namespace BiggusTickus.Models
 {
-    public class Event
+    public class Show
     {
-        public int EventId { get; set; }
+        public int ShowId { get; set; }
         public string Name { get; set; } = string.Empty;
-        public DateTime EventDate { get; set; }
+        public DateTime ShowDate { get; set; }
         public string Venue { get; set; } = string.Empty;
         public string Owner { get; set; } = string.Empty;
-        public DateTime EventCreation { get; set; } = DateTime.Now;
+        public DateTime ShowCreation { get; set; } = DateTime.Now;
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
